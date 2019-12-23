@@ -14,7 +14,6 @@ tone_fre = []       # 音階と周波数の対応リスト
 
 # 音階を引数に周波数を返す関数
 def search_in_frequency(x):
-    #print(int(x))
     for row in tone_fre:
         if row[0] == x:
             return [float(row[1]), float(row[2])]
@@ -48,15 +47,12 @@ for row in l:
     
     tone = re.sub("\\D", "", row[0])
 
-    print(tone)
-
     length = int(re.sub("\\D", "", row[2]))
 
     fre_time = search_in_frequency(tone)
-    print(fre_time)
     frequency_TeC = round(fre_time[0] / 2)
     time_TeC = round(fre_time[1] * 100 / rate)
-    msg = "DC     " + str(frequency_TeC) + "," + str(time_TeC)
+    msg = "\tDC\t" + str(frequency_TeC) + "," + str(time_TeC)
 
 
     if length == note_length:
