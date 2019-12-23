@@ -40,7 +40,7 @@ for row in l:
     if row == []:
         continue
     
-    index = row[0].find('s.setTone(')
+    index = row[0].find('.setTone')
 
     if index == -1:
         continue
